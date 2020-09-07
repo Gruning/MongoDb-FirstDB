@@ -34,4 +34,4 @@ const getProducts = async(req, res,next)=>{
 }
 
 exports.createProduct = createProduct 
-exports.getProduct = getProducts
+exports.getProducts = getProducts
