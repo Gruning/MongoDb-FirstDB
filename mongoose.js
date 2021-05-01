@@ -1,6 +1,17 @@
 const mongoose = require('mongoose')
 const Product = require('./models/product')
-mongoose.connect('mongodb+srv://gruningzen:Esfera3010@cluster0.uo1tr.mongodb.net/products_test?retryWrites=true&w=majority')
+
+const connectionStringAtlas = 'mongodb+srv://gruningzen:Esfera3010@cluster0.uo1tr.mongodb.net?retryWrites=true&w=majority' 
+
+const connectionStringLocal= 'mongodb://localhost:27017/products_test'
+
+mongoose.connect(
+   // connectionStringLocal,{
+   connectionStringAtlas, {
+    dbName:'products_test',
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
     .then(()=>console.log('connected to DB') )
     .catch(()=> console.log('connection failed'))
 const createProduct = async(req,res,next)=>{
