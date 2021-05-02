@@ -15,11 +15,11 @@ mongoose.connect(
     .then(()=>console.log('connected to DB') )
     .catch(()=> console.log('connection failed'))
 const createProduct = async(req,res,next)=>{
-    const createProduct = new Product({
+    const createdProduct = new Product({
         name :req.body.name,
         price:req.body.price,
     })
-    const result = await  createProduct.save()
+    const result = await  createdProduct.save()
 
     res.json(result)
 }
