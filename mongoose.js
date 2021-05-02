@@ -14,6 +14,7 @@ mongoose.connect(
 })
     .then(()=>console.log('connected to DB') )
     .catch(()=> console.log('connection failed'))
+    
 const createProduct = async(req,res,next)=>{
     const createdProduct = new Product({
         name :req.body.name,
